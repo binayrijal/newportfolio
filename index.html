@@ -50,17 +50,15 @@
 
         .about-content {
             display: flex;
+            justify-content: center;
             align-items: center;
+            text-align: center;
+            flex-direction: column;
         }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-photo {
+
+        .about-content img {
             max-width: 300px;
             border-radius: 50%;
-            margin-left: 50px; /* Adjust this margin as needed */
         }
 
         .portfolio-items {
@@ -124,27 +122,22 @@
             width: 100%;
             bottom: 0;
         }
-        /* Media query for smaller screens */
-    @media (max-width: 768px) {
-        .about-content {
-            flex-direction: column;
+
+        .tools-icons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
-        .about-photo {
-            margin-left: 0;
-            margin-bottom: 20px;
+        .tool {
+            text-align: center;
+            margin: 20px;
         }
-    }
 
-        @media (max-width: 768px) {
-            .portfolio-item {
-                width: calc(100% - 40px);
-            }
-
-            .testimonial img {
-                max-width: 70px;
-            }
-
+        .tool img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -157,6 +150,7 @@
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#tools">Tools</a></li>
         </ul>
     </nav>
 
@@ -164,6 +158,7 @@
     <section id="about" class="section">
         <h2>About Me</h2>
         <div class="about-content">
+            <img src="side.jpg.jpg" alt="Your Photo">
             <div class="about-text">
                 <p>I'm a passionate developer with a diverse skill set and a love for creating innovative solutions. With experience in Django, machine learning, Java, C, C++, Python, Linux, databases, and cloud platforms like AWS and Azure, I thrive on tackling complex challenges and turning ideas into reality.</p>
                 <p>My journey in programming started with a fascination for technology and a drive to make a positive impact through software. Over the years, I've honed my skills in various languages and technologies, allowing me to adapt to different projects and deliver high-quality results.</p>
@@ -171,7 +166,6 @@
                 <p>Whether it's building robust web applications with Django, delving into the world of machine learning, or crafting elegant solutions in Java or Python, I'm dedicated to continuous learning and pushing the boundaries of what's possible in the world of software development.</p>
                 <p>Let's connect and collaborate on exciting projects that make a difference!</p>
             </div>
-            <img src="side.jpg.jpg" alt="Your Photo" class="about-photo">
         </div>
     </section>
 
@@ -212,14 +206,70 @@
     <section id="testimonials" class="section">
         <h2>Testimonials</h2>
         <div class="testimonial">
-            <img src="side1.jpg.jpg" alt="Person 1">
+            <img src="family/side9 (5).jpg" alt="Person 1">
             <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula felis id mauris consequat, sed pretium lacus rutrum."</p>
             <p>- John Doe</p>
         </div>
         <div class="testimonial">
-            <img src="family/side9 (5).jpg" alt="Person 2">
+            <img src="family/side9 (1).jpg" alt="Person 2">
             <p>"Sed euismod, magna eget malesuada tristique, enim elit blandit magna, sit amet lobortis purus dui eget felis."</p>
             <p>- Jane Smith</p>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="section">
+        <h2>Tools</h2>
+        <div class="tools-icons">
+            <div class="tool">
+                <img src="c_icon.png" alt="C">
+                <span>C</span>
+            </div>
+            <div class="tool">
+                <img src="cpp_icon.png" alt="C++">
+                <span>C++</span>
+            </div>
+            <div class="tool">
+                <img src="libreoffice_icon.png" alt="LibreOffice">
+                <span>LibreOffice</span>
+            </div>
+            <div class="tool">
+                <img src="linux_icon.png" alt="Linux">
+                <span>Linux</span>
+            </div>
+            <div class="tool">
+                <img src="django_icon.png" alt="Django">
+                <span>Django</span>
+            </div>
+            <div class="tool">
+                <img src="python_icon.png" alt="Python">
+                <span>Python</span>
+            </div>
+            <div class="tool">
+                <img src="azure_icon.png" alt="Azure">
+                <span>Azure</span>
+            </div>
+            <div class="tool">
+                <img src="aws_icon.png" alt="AWS">
+                <span>AWS</span>
+            </div>
+            <div class="tool">
+                <img src="java_icon.png" alt="Java">
+                <span>Java</span>
+            </div>
+            <div class="tool">
+                <img src="js_icon.png" alt="JavaScript">
+                <span>JavaScript</span>
+            </div>
+            <div class="tool">
+                <img src="php_icon.png" alt="PHP">
+                <span>PHP</span>
+            </div>
+            <div class="tool">
+                <img src="ubuntu_icon.png" alt="Ubuntu">
+                <span>Ubuntu</span>
+            </div>
+            <!-- Add more tools/icons as needed -->
         </div>
     </section>
 
@@ -229,12 +279,13 @@
             <p>&copy; 2022 Your Name | All rights reserved</p>
             <p>Email: info@example.com | Phone: +1234567890</p>
             <p>Address: 123 Street, City, Country</p>
-            <p><a href="binaycv(1).pdf" download>Download CV</a></p>
+            <p><a href="your_cv.pdf" download>Download CV</a></p>
         </div>
     </footer>
 
 </body>
 </html>
+
 
 
 
