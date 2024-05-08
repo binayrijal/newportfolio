@@ -3,41 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Portfolio</title>
     <style>
-        /* Reset styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Basic styling */
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden; /* Prevent horizontal scrollbar */
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header {
-            background: #333;
-            color: #fff;
-            padding: 20px 0;
-        }
-
-        header h1 {
             margin: 0;
-            font-size: 24px;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #333;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
         }
 
         nav ul {
             list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
         nav ul li {
@@ -46,66 +30,93 @@
         }
 
         nav ul li a {
-            color: #fff;
+            color: white;
             text-decoration: none;
+            padding: 10px 15px;
+            display: inline-block;
         }
 
-        section {
+        nav ul li a:hover {
+            background-color: #555;
+        }
+
+        .section {
             padding: 50px 0;
-            opacity: 0; /* Initially hide sections */
-            transition: opacity 0.8s ease-in-out;
         }
 
-        section.active {
-            opacity: 1; /* Show active sections */
+        h2 {
+            text-align: center;
         }
 
-        section h2 {
-            margin-bottom: 20px;
+        .portfolio-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .portfolio-item {
-            margin-bottom: 40px;
+            width: 300px;
+            margin: 20px;
+            text-align: center;
         }
 
         .portfolio-item img {
             max-width: 100%;
-            height: auto;
         }
 
-        footer {
-            background: #333;
-            color: #fff;
-            padding: 20px 0;
+        .about-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
+            flex-direction: column;
+        }
+
+        .about-content img {
+            max-width: 300px;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #555;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>My Portfolio</h1>
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <section id="about" class="active">
-        <div class="container">
-            <h2>About Me</h2>
-            <img src="side.jpg.jpg" alt="Your Photo" style="max-width: 300px;">
-            <p>Welcome to my portfolio website. I am a web developer passionate about creating beautiful and functional websites.</p>
-        </div>
-    </section>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <section id="portfolio">
-        <div class="container">
-            <h2>Portfolio</h2>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+        <h2>Portfolio</h2>
+        <div class="portfolio-items">
             <div class="portfolio-item">
                 <img src="project1.jpg" alt="Project 1">
                 <h3>Project 1</h3>
@@ -120,11 +131,19 @@
         </div>
     </section>
 
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <img src="side.jpg.jpg" alt="Your Photo" style="max-width: 300px;">
-            <p>Feel free to reach out to me using the form below.</p>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <img src="your_photo.jpg" alt="Your Photo">
+            <p>Welcome to my portfolio website. I am a web developer passionate about creating beautiful and functional websites.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+        <div class="contact-form">
             <form action="submit.php" method="post">
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
@@ -134,34 +153,21 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 My Portfolio</p>
-        </div>
-    </footer>
-
     <script>
-        // Function to toggle active class on sections based on URL hash
-        function toggleActiveSection() {
-            var sections = document.querySelectorAll('section');
-            var hash = window.location.hash.substr(1);
-            sections.forEach(function(section) {
-                if (section.id === hash) {
-                    section.classList.add('active');
-                } else {
-                    section.classList.remove('active');
-                }
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
-        }
-
-        // Toggle active section on page load
-        window.addEventListener('load', toggleActiveSection);
-
-        // Toggle active section on hash change
-        window.addEventListener('hashchange', toggleActiveSection);
+        });
     </script>
 </body>
 </html>
+
 
 
 
