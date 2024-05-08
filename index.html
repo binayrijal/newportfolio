@@ -16,6 +16,7 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scrollbar */
         }
 
         .container {
@@ -51,6 +52,12 @@
 
         section {
             padding: 50px 0;
+            opacity: 0; /* Initially hide sections */
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        section.active {
+            opacity: 1; /* Show active sections */
         }
 
         section h2 {
@@ -88,9 +95,10 @@
         </div>
     </header>
 
-    <section id="about">
+    <section id="about" class="active">
         <div class="container">
             <h2>About Me</h2>
+            <img src="your_photo.jpg" alt="Your Photo" style="max-width: 300px;">
             <p>Welcome to my portfolio website. I am a web developer passionate about creating beautiful and functional websites.</p>
         </div>
     </section>
@@ -115,6 +123,7 @@
     <section id="contact">
         <div class="container">
             <h2>Contact Me</h2>
+            <img src="your_photo.jpg" alt="Your Photo" style="max-width: 300px;">
             <p>Feel free to reach out to me using the form below.</p>
             <form action="submit.php" method="post">
                 <input type="text" name="name" placeholder="Your Name" required>
@@ -130,8 +139,30 @@
             <p>&copy; 2024 My Portfolio</p>
         </div>
     </footer>
+
+    <script>
+        // Function to toggle active class on sections based on URL hash
+        function toggleActiveSection() {
+            var sections = document.querySelectorAll('section');
+            var hash = window.location.hash.substr(1);
+            sections.forEach(function(section) {
+                if (section.id === hash) {
+                    section.classList.add('active');
+                } else {
+                    section.classList.remove('active');
+                }
+            });
+        }
+
+        // Toggle active section on page load
+        window.addEventListener('load', toggleActiveSection);
+
+        // Toggle active section on hash change
+        window.addEventListener('hashchange', toggleActiveSection);
+    </script>
 </body>
 </html>
+
 
 
 
