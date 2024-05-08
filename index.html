@@ -1,103 +1,138 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Page</title>
+    <title>My Portfolio</title>
     <style>
-        /* General styles */
-        body {
-            font-family: Arial, sans-serif;
+        /* Reset styles */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
+
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
         }
-        /* Header styles */
+
         header {
-            background-color: #333;
+            background: #333;
             color: #fff;
-            padding: 10px;
+            padding: 20px 0;
         }
-        header nav ul {
-            list-style: none;
-            padding: 0;
+
+        header h1 {
             margin: 0;
-            text-align: right; /* Align navbar items to the right */
+            font-size: 24px;
         }
-        header nav ul li {
-            display: inline-block;
-            margin-left: 10px; /* Add spacing between navbar items */
+
+        nav ul {
+            list-style: none;
         }
-        header nav ul li a {
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
             color: #fff;
             text-decoration: none;
-            padding: 10px; /* Add padding to navbar items */
         }
-        header nav ul li a:hover {
-            background-color: #555; /* Change background color on hover */
+
+        section {
+            padding: 50px 0;
         }
-        /* Main content styles */
-        #maincontent {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 20px;
+
+        section h2 {
+            margin-bottom: 20px;
         }
-        #maincontent img {
-            max-width: 200px;
+
+        .portfolio-item {
+            margin-bottom: 40px;
+        }
+
+        .portfolio-item img {
+            max-width: 100%;
             height: auto;
-            border-radius: 50%;
-            margin-right: 20px; /* Add spacing between image and text */
         }
-        #about-me {
-            flex: 1; /* Take remaining space */
-            text-align: left;
-        }
-        /* Footer styles */
+
         footer {
-            background-color: #333;
+            background: #333;
             color: #fff;
+            padding: 20px 0;
             text-align: center;
-            padding: 20px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
+            <h1>My Portfolio</h1>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    <div class="container">
-        <div id="maincontent">
-            <img src="side.jpg.jpg" alt="Profile Picture">
-            <div id="about-me">
-                <h2>About Me</h2>
-                <p>Hi! My name is Binay Rijal. I'm a learner and coder from the small hometown Hasanapur. I'm currently studying at NCIT College of Lalitpur. I'm passionate about learning C, C++, Python, and JavaScript. Welcome to my small universe!</p>
-            </div>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Welcome to my portfolio website. I am a web developer passionate about creating beautiful and functional websites.</p>
         </div>
-    </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <div class="portfolio-item">
+                <img src="project1.jpg" alt="Project 1">
+                <h3>Project 1</h3>
+                <p>Description of project 1.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="project2.jpg" alt="Project 2">
+                <h3>Project 2</h3>
+                <p>Description of project 2.</p>
+            </div>
+            <!-- Add more portfolio items as needed -->
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out to me using the form below.</p>
+            <form action="submit.php" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
-            &copy; 2024 Your Name
+            <p>&copy; 2024 My Portfolio</p>
         </div>
     </footer>
 </body>
 </html>
+
 
 
 
