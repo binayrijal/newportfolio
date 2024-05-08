@@ -50,15 +50,17 @@
 
         .about-content {
             display: flex;
-            justify-content: center;
             align-items: center;
-            text-align: center;
-            flex-direction: column;
         }
-
-        .about-content img {
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-photo {
             max-width: 300px;
             border-radius: 50%;
+            margin-left: 50px; /* Adjust this margin as needed */
         }
 
         .portfolio-items {
@@ -122,6 +124,17 @@
             width: 100%;
             bottom: 0;
         }
+        /* Media query for smaller screens */
+    @media (max-width: 768px) {
+        .about-content {
+            flex-direction: column;
+        }
+
+        .about-photo {
+            margin-left: 0;
+            margin-bottom: 20px;
+        }
+    }
 
         @media (max-width: 768px) {
             .portfolio-item {
@@ -131,6 +144,7 @@
             .testimonial img {
                 max-width: 70px;
             }
+
         }
     </style>
 </head>
@@ -150,12 +164,14 @@
     <section id="about" class="section">
         <h2>About Me</h2>
         <div class="about-content">
-            <img src="side.jpg.jpg" alt="Your Photo">
-            <p>I'm a passionate developer with a diverse skill set and a love for creating innovative solutions. With experience in Django, machine learning, Java, C, C++, Python, Linux, databases, and cloud platforms like AWS and Azure, I thrive on tackling complex challenges and turning ideas into reality.</p>
-            <p>My journey in programming started with a fascination for technology and a drive to make a positive impact through software. Over the years, I've honed my skills in various languages and technologies, allowing me to adapt to different projects and deliver high-quality results.</p>
-            <p>When I'm not coding, you'll find me exploring the latest developments in AI and machine learning, diving into open-source projects, or working on personal projects to sharpen my skills and explore new technologies.</p>
-            <p>Whether it's building robust web applications with Django, delving into the world of machine learning, or crafting elegant solutions in Java or Python, I'm dedicated to continuous learning and pushing the boundaries of what's possible in the world of software development.</p>
-            <p>Let's connect and collaborate on exciting projects that make a difference!</p>
+            <div class="about-text">
+                <p>I'm a passionate developer with a diverse skill set and a love for creating innovative solutions. With experience in Django, machine learning, Java, C, C++, Python, Linux, databases, and cloud platforms like AWS and Azure, I thrive on tackling complex challenges and turning ideas into reality.</p>
+                <p>My journey in programming started with a fascination for technology and a drive to make a positive impact through software. Over the years, I've honed my skills in various languages and technologies, allowing me to adapt to different projects and deliver high-quality results.</p>
+                <p>When I'm not coding, you'll find me exploring the latest developments in AI and machine learning, diving into open-source projects, or working on personal projects to sharpen my skills and explore new technologies.</p>
+                <p>Whether it's building robust web applications with Django, delving into the world of machine learning, or crafting elegant solutions in Java or Python, I'm dedicated to continuous learning and pushing the boundaries of what's possible in the world of software development.</p>
+                <p>Let's connect and collaborate on exciting projects that make a difference!</p>
+            </div>
+            <img src="your_photo.jpg" alt="Your Photo" class="about-photo">
         </div>
     </section>
 
