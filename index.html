@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Binay's Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -102,15 +103,20 @@
             background-color: #555;
         }
 
-        .testimonial {
-            text-align: center;
-            margin-bottom: 30px;
+        .testimonials-container {
+            display: flex;
+            justify-content: space-around;
+            overflow-x: auto;
         }
 
-        .testimonial img {
-            max-width: 100px;
-            border-radius: 50%;
-            margin-bottom: 10px;
+        .testimonial {
+            flex: 0 0 auto;
+            padding: 0 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial:hover {
+            transform: scale(1.1);
         }
 
         .footer {
@@ -135,10 +141,8 @@
             margin: 20px;
         }
 
-        .tool img {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 10px;
+        .tool i {
+            font-size: 48px; /* Adjust icon size as needed */
         }
     </style>
 </head>
@@ -232,15 +236,18 @@
     <!-- Testimonials Section -->
     <section id="testimonials" class="section">
         <h2>Testimonials</h2>
-        <div class="testimonial">
-            <img src="family/side9 (5).jpg" alt="Person 1">
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula felis id mauris consequat, sed pretium lacus rutrum."</p>
-            <p>- John Doe</p>
-        </div>
-        <div class="testimonial">
-            <img src="family/side9 (1).jpg" alt="Person 2">
-            <p>"Sed euismod, magna eget malesuada tristique, enim elit blandit magna, sit amet lobortis purus dui eget felis."</p>
-            <p>- Jane Smith</p>
+        <div class="testimonials-container">
+            <div class="testimonial">
+                <i class="fas fa-user"></i>
+                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula felis id mauris consequat, sed pretium lacus rutrum."</p>
+                <p>- John Doe</p>
+            </div>
+            <div class="testimonial">
+                <i class="fas fa-user"></i>
+                <p>"Sed euismod, magna eget malesuada tristique, enim elit blandit magna, sit amet lobortis purus dui eget felis."</p>
+                <p>- Jane Smith</p>
+            </div>
+            <!-- Add more testimonials as needed -->
         </div>
     </section>
 
@@ -249,51 +256,39 @@
         <h2>Tools</h2>
         <div class="tools-icons">
             <div class="tool">
-                <img src="c_icon.png" alt="C">
+                <i class="fab fa-c"></i>
                 <span>C</span>
             </div>
             <div class="tool">
-                <img src="cpp_icon.png" alt="C++">
+                <i class="fab fa-cuttlefish"></i>
                 <span>C++</span>
             </div>
             <div class="tool">
-                <img src="libreoffice_icon.png" alt="LibreOffice">
+                <i class="fas fa-file-alt"></i>
                 <span>LibreOffice</span>
             </div>
             <div class="tool">
-                <img src="linux_icon.png" alt="Linux">
+                <i class="fab fa-linux"></i>
                 <span>Linux</span>
             </div>
             <div class="tool">
-                <img src="django_icon.png" alt="Django">
-                <span>Django</span>
-            </div>
-            <div class="tool">
-                <img src="python_icon.png" alt="Python">
+                <i class="fab fa-python"></i>
                 <span>Python</span>
             </div>
             <div class="tool">
-                <img src="azure_icon.png" alt="Azure">
-                <span>Azure</span>
-            </div>
-            <div class="tool">
-                <img src="aws_icon.png" alt="AWS">
-                <span>AWS</span>
-            </div>
-            <div class="tool">
-                <img src="java_icon.png" alt="Java">
+                <i class="fab fa-java"></i>
                 <span>Java</span>
             </div>
             <div class="tool">
-                <img src="js_icon.png" alt="JavaScript">
+                <i class="fab fa-js"></i>
                 <span>JavaScript</span>
             </div>
             <div class="tool">
-                <img src="php_icon.png" alt="PHP">
+                <i class="fab fa-php"></i>
                 <span>PHP</span>
             </div>
             <div class="tool">
-                <img src="ubuntu_icon.png" alt="Ubuntu">
+                <i class="fab fa-ubuntu"></i>
                 <span>Ubuntu</span>
             </div>
             <!-- Add more tools/icons as needed -->
@@ -312,6 +307,7 @@
 
 </body>
 </html>
+
 
 
 
